@@ -23,10 +23,10 @@ class TestBaidu(unittest.TestCase):
         sleep(3)
 
     def test_search(self):
-        with codecs.open('baidu_data.csv', 'r', 'utf_8_sig') as f:
+        with codecs.open('D:/unittest_sample/file/baidu_data.csv', 'r', 'utf_8_sig') as f:
             data = csv.reader(f)
             for line in islice(data, 1, None):
-                search_key = line(1)
+                search_key = line[1]
                 self.baidu_search(search_key)
 
 if __name__ == '__main__':
